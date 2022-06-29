@@ -4,44 +4,6 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 
-// Search Campground
-
-// Define escapeRegex function for search feature
-function escapeRegex(text) {
-  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
-
-//INDEX - show all campgrounds
-router.get("/", function (req, res) {
-  if (req.query.search && req.xhr) {
-    const regex = new RegExp(escapeRegex(req.query.search), "gi");
-    // Get all campgrounds from DB
-    Campground.find({ name: regex }, function (err, allCampgrounds) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.status(200).json(allCampgrounds);
-      }
-    });
-  } else {
-    // Get all campgrounds from DB
-    Campground.find({}, function (err, allCampgrounds) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (req.xhr) {
-          res.json(allCampgrounds);
-        } else {
-          res.render("campgrounds/index", {
-            campgrounds: allCampgrounds,
-            page: "campgrounds",
-          });
-        }
-      }
-    });
-  }
-});
-
 module.exports.index = async (req, res) => {
   const campgrounds = await Campground.find({});
   res.render("campgrounds/index", { campgrounds });
