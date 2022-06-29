@@ -1,14 +1,15 @@
 <% layout('layouts/boilerplate') %>
 <div id="map" style="width: 100%; height: 400px"></div>
+ <!-- Campground Search -->
+ <p>
+  <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+    <div class="form-group">
+      <input type="text" name="search" placeholder="Campground search..." class="form-control">
+    </div>
+  </form>
+ </p>
 <div class="row">
-  <!-- Campground Search -->
-  <p>
-    <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
-      <div class="form-group">
-        <input type="text" name="search" placeholder="Campground search..." class="form-control">
-      </div>
-    </form>
-   </p>
+ 
 
   <% for(let campground of campgrounds) {%>
   <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
