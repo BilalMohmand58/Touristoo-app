@@ -18,6 +18,10 @@ router
     validateCampground,
     catchAsync(campgrounds.createCampground)
   );
+// .post(upload.array('image'),(req , res)=>{
+//     console.log(req.body, req.files);
+//     res.send('it worked!');
+// })
 
 router.get("/new", isLoggedin, campgrounds.renderNewForm);
 
