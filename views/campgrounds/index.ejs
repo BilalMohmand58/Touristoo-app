@@ -1,23 +1,5 @@
 <% layout('layouts/boilerplate') %>
 <div id="map" style="width: 100%; height: 400px"></div>
-<!-- Campground Search
-
-<form
-  action="/campgrounds"
-  method="GET"
-  class="form-inline"
-  id="campground-search"
->
-  <div class="form-group">
-    <input
-      type="text"
-      name="search"
-      placeholder="Campground search..."
-      class="form-control"
-    />
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </div>
-</form> -->
 
 <!-- nav -->
 
@@ -29,14 +11,16 @@
       class="form-inline"
       id="campground-search"
     >
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        name="search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <span>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          name="search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </span>
     </form>
   </div>
 </nav>
