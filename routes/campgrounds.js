@@ -9,44 +9,6 @@ const multer = require("multer");
 const { storage } = require("../cloudinary");
 const upload = multer({ storage });
 
-// Search Campground
-
-// Define escapeRegex function for search feature
-function escapeRegex(text) {
-  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
-
-//INDEX - show all campgrounds
-router.get("/", function (req, res) {
-  if (req.query.search && req.xhr) {
-    const regex = new RegExp(escapeRegex(req.query.search), "gi");
-    // Get all campgrounds from DB
-    Campground.find({ name: regex }, function (err, allCampgrounds) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.status(200).json(allCampgrounds);
-      }
-    });
-  } else {
-    // Get all campgrounds from DB
-    Campground.find({}, function (err, allCampgrounds) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (req.xhr) {
-          res.json(allCampgrounds);
-        } else {
-          res.render("campgrounds/index", {
-            campgrounds: allCampgrounds,
-            page: "campgrounds",
-          });
-        }
-      }
-    });
-  }
-});
-
 router
   .route("/")
   .get(catchAsync(campgrounds.index))
