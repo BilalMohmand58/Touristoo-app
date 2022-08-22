@@ -21,15 +21,19 @@
     <link rel="stylesheet" href="/stylesheets/landing.css" />
     <link rel="stylesheet" href="/stylesheets/button.css" />
   </head>
-  <body class="d-flex text-center text-white bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-0 mx-auto flex-column">
+  <body
+    class="d-flex text-center text-white bg-dark justify-content-center align-items-center"
+  >
+    <div
+      class="cover-container d-flex w-100 h-100 p-0 m-1 flex-column justify-content-center"
+    >
       <header class="mb-auto">
         <!-- As a link -->
         <nav class="navbar navbar-light bg-transparent float-right">
           <% if(!currentUser) { %>
-          <a class="btn btn-dark" href="/login">Login</a>
+          <a class="ml-5 btn btn-dark btn-sm" href="/login">Login</a>
           <% } else { %>
-          <a href="/logout" class="btn btn-dark">Logout</a>
+          <a href="/logout" class="ml-5 btn btn-dark btn-sm">Logout</a>
           <% } %>
         </nav>
       </header>
