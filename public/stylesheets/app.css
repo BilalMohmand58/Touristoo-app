@@ -6,14 +6,14 @@
 
 /* Bootstrap carosel styles */
 .carousel-inner {
-  height: 400px;
+  height: 400px !important;
 }
 .carousel-item img {
-  position: absolute;
+  /* position: absolute; */
   object-fit: cover;
   top: 0;
   left: 0;
-  height: 400px;
+  min-height: 400px;
 }
 
 @media screen and (max-width: 760px) {
