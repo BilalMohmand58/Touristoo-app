@@ -30,10 +30,6 @@ body {
   border-bottom-color: white;
 }
 
-/* .btn-secondary, .btn-secondary:hover{
-    color: #333;
-    text-shadow: none;
-} */
 span {
   margin-top: 0.5rem;
 }
@@ -42,6 +38,6 @@ a {
 }
 
 span {
-  display: inline-block; /* change the display type           */
-  margin: 25px 0; /* apply the needed vertical margins */
+  display: inline-block;
+  margin: 25px 0;
 }
