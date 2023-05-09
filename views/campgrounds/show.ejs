@@ -75,7 +75,7 @@
 
   <!-- Review -->
   <div class="col-md-6">
-    <div id="map" style="width: 290px; height: 300px; padding: 10px"></div>
+    <div id="map" style="width: 100%; height: 300px; padding: 10px"></div>
     <% if(currentUser) { %>
     <h3 style="margin-top: 20px">Leave Review</h3>
     <form
@@ -148,7 +148,7 @@
       <button class="btn btn-success">Submit</button>
     </form>
     <% } %> <% for (let review of campground.reviews) { %>
-    <div class="card md-3 mb-2">
+    <div class="card md-3 mb-2 mt-4">
       <div class="card-body">
         <h5 class="card-title"><%= review.author.username %></h5>
         <p class="starability-result" data-rating="<%= review.rating %>">

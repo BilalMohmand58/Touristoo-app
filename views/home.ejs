@@ -27,17 +27,7 @@
     <div
       class="cover-container d-flex w-100 h-100 p-0 flex-column justify-content-center"
     >
-      <header class="mb-5 mx-2">
-        <!-- As a link -->
-        <nav class="navbar navbar-light bg-transparent float-right">
-          <% if(!currentUser) { %>
-          <a class="ml-5 btn btn-dark btn-sm" href="/login">Login</a>
-          <% } else { %>
-          <a href="/logout" class="ml-5 btn btn-dark btn-sm">Logout</a>
-          <% } %>
-        </nav>
-      </header>
-      <main class="px-3">
+      <main class="px-3 m-auto">
         <h1 class="font-weight-bold">Welcome to Touristoo.</h1>
         <p class="lead">
           Jump right in and explore beautiful tourists spots. <br />
@@ -46,7 +36,16 @@
         <br />
 
         <span>
-          <a href="/campgrounds" class="button-85 btn-lg">Campgrounds</a>
+          <a href="/campgrounds" class="button-85 btn-lg mr-4"
+            >View Campgrounds</a
+          >
+        </span>
+        <span>
+          <% if(!currentUser) { %>
+          <a class="button-85 btn-lg" href="/login">Login</a>
+          <% } else { %>
+          <a href="/logout" class="button-85 btn-lg">Logout</a>
+          <% } %>
         </span>
       </main>
 
